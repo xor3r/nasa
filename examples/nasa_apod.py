@@ -4,7 +4,8 @@ import pprint
 import webbrowser
 
 
-URL = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+key = open('KEY.txt', 'r', errors='ignore', encoding='utf-8').readline()
+URL = "https://api.nasa.gov/planetary/apod?api_key={0}".format(key)
 jsonFILE = json.loads(urllib.request.urlopen(URL).read())
 pprint.pprint(jsonFILE)
 webbrowser.open(jsonFILE['url'])
