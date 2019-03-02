@@ -37,7 +37,7 @@ def build_map(data):
 		color='red',
 		radius=8))
 
-	m.save('maps/Mars.html')
+	m.save('templates/mars.html')
 
 
 if __name__ == '__main__':
