@@ -4,7 +4,6 @@ Project for analyzing data from NASA's API (mainly rovers on Mars) and sharing i
 ![](https://img.shields.io/badge/-status:wip-5319e7.svg)
 ![](https://img.shields.io/github/license/damoklov/nasa.svg)
 ![](https://img.shields.io/github/languages/code-size/damoklov/nasa.svg)
-![](https://img.shields.io/github/commit-activity/m/damoklov/nasa.svg)
 ![](https://img.shields.io/github/last-commit/damoklov/nasa.svg)
 
 > _"One, remember to look up at the stars and not down at your feet. Two, never give up work. Work gives you meaning and purpose and life is empty without it. Three, if you are lucky enough to find love, remember it is there and don’t throw it away." - Stephen Hawking_
