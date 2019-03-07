@@ -1,5 +1,5 @@
 # nasa
-Project for analyzing data from NASA's API (mainly rovers on Mars) and sharing it with the society.
+Project for analyzing data from NASA's API (mainly rovers on Mars) and creating a VR experience using it.
 
 ![](https://img.shields.io/badge/-status:wip-5319e7.svg)
 ![](https://img.shields.io/github/license/damoklov/nasa.svg)
