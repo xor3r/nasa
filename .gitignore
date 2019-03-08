@@ -1,6 +1,9 @@
 # API key
 KEY.txt
 
+# Photos folder
+media/
+
 # PyCharm
 .idea/
 
