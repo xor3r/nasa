@@ -1,7 +1,6 @@
 import folium
 
 
-
 def readfile():
 	f = open('data/locations.csv', 'r', errors='ignore', encoding='utf-8')
 	data = (tuple(line.strip().split(',')) for line in f)
