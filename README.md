@@ -10,6 +10,100 @@ Project for analyzing data from NASA's API (mainly rovers on Mars) and creating 
 
 ![GIF](https://media.giphy.com/media/xT0xezQXGJl8nRthny/source.gif)
 
+
+# Virtual Journey on Mars
+
+This project is in development as a part of my coursework from Programming course.
+It makes you able to visit a website, where you can:
+1. Download an app on your Android phone, which gives you an opportunity to take a journey through Martian fields.
+2. Have a look on a map of Curiosity rover's movement since the very beginning of its life on Mars.
+3. Look on some photos of Mars based on your choice.
+
+## Getting Started
+
+You can manually download this project and run __flask_app.py__ to locally open a website or run __make_map.py__ to see how I created a folium-based HTML map. You can also clone this repo by typing into your terminal: `git clone <repo's_link>`
+See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites (chapter is in progress)
+
+You do not need any special tools for running my project except for Python 3 and certain packages
+
+```
+Examples will be here soon!
+```
+
+### Installing (chapter is in progress)
+
+A step by step series of examples that tell you how to get a development env running
+
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo
+
+## Running the tests (chapter is in progress)
+
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests (chapter is in progress)
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests (chapter is in progress)
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## Deployment (chapter is in progress)
+
+Add additional notes about how to deploy this on a live system
+
+## Built With (chapter is in progress)
+
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+
+## Contributing (chapter is in progress)
+
+Please read [CONTRIBUTING.md](link) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning (chapter is in progress)
+
+
+
+## Authors
+
+* **Mykhailo Pazyniuk** - *Initial work* - [damoklov](https://github.com/damoklov/)
+
+See also the list of [contributors](link) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments 
+
+* I used this README.md template made by [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+* Inspiration
+* etc
+
 ## Brief explanation of API functions
 ### Main features
 https://api.nasa.gov/index.html
@@ -28,43 +122,7 @@ Each camera has a unique feature and perspective.\
 Example of entry on 06/06/2015 (https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=DEMO_KEY)
 ***
 
-#### **Movement data**
-
-This document (https://mars.jpl.nasa.gov/msl-raw-images/locations.xml) provides access to data on the 'Curiosity' movement of the
-planet's surface. Among them there are:
-* Longitude and latitude
-* The number of the sent transfer request
-* Arrival time
-* Date of sending the transfer status
-* Coordinates _(x, y, z)_
-***
-
-#### **Data collection JSON**
-This document (https://mars.jpl.nasa.gov/msl-raw-images/image/image_manifest.json) provides access to photos of rovers that have been
-made at all times. Among the options are:
-* Last Martian day when photos were taken
-* The last day of the earth when photos were taken
-* Total number of photos
-* List of _sol_ data, which also contains:
-  * Specific Martian day  
-  * Number of photos for this day   
-  * Link to the photo   
-  * Last update date
-
-***
-
-#### **JSON file for separate day**
-This document, for example (https://mars.jpl.nasa.gov/msl-raw-images/image/images_sol2320.json), provides access to the photo and data as of 21.02.2019. Among the options are:
-* The last day when photos were taken
-* Martian serial number of the day
-* List of _images_ data, which also contains:   
-  * Camera Vector   
-  * UTC time   
-  * Link to the photo   
-  * Coordinates _(x, y, z)_   
-  * Camera type
-
-# Coursework description problem
+## Coursework description problem
 ### Idea
 Space is the endless, separate world for exploration, where each one of us can find something for him or her.\
 My research topic is based on the info, providede by the National Aeronautics and Space Administration (NASA):
@@ -129,51 +187,8 @@ The concept of the program is that it, with the resources provided by NASA, will
 These features are only the initial ones that I expect to complete before the deadline of this coursework.\
 I also plan to gradually expand the functionality, which will differentiate my program from analogues on the network.
 
-#### A brief overview of the current state of the project
-At the moment I have found that:
-1. Controversial performance is the decision to combine photographs and coordinates that they are responsible for, since some databases do not provide relevant information
-2. At this stage, the method of storing the received data is contemplated
-3. There is a opportunity to think of additional implementation to develop a unique product
-
-***
-## Usage of API
-### urllib
-There is no shell program for the needs of this module, so it was decided to use the usual built-in library _urllib_ (_urllib.request_). It provides access to the necessary files for work from NAS databases, which will then be processed using libraries to work with JSON and XML files.\
-In the examples given by me in the **nasa/examples** section, I also use the _webbrowser_ library for an illustrative example of a photo that can be obtained from database data.
-
 ***
 
-#### Locations' parsing
-This test module was designed to display data from an XML file with rover locations in different periods of time. 
-<br> 
-<br>
-
-![parse_location](https://github.com/damoklov/nasa/blob/master/screenshots/parse_by_sol.png)
-
-* _urllib.request.utlopen_ allows you to open a file under this link and read it.
-* _minidom.parseString_ allows you to read the string structure in this XML file.
-* _getElementsByTagName_ lets you access and retrieve individual XML file keys.
-* _firstChild.nodeValue_ gives access to the first embedded object by the provided key.
-***
-
-#### Summary file of locations' parsing
-This test module was designed to demonstrate This test module was designed to display data from a JSON file from the Martian date, referring to the document from the collection during this Martian day, as well as the total number of photos in a given period of time. <br>
-<br>
-
-![parse_image_manifest](https://github.com/damoklov/nasa/blob/master/screenshots/parse_image_manifest.png)
-
-* _json.loads_ structure allows to download remote JSON file and convert it into an object of class "Dictionary" of Python language.
-* The following items only show how access individual keys of JSON file and obtain value from them, such as links to other files or number of photos over the period.
-***
-
-#### SOL-type file parsing
-This test module was designed to display data from a JSON file with a link to a photo, a Martian date, as well as various camera models to which these photos were taken.
-![parse_by_sol](https://github.com/damoklov/nasa/blob/master/screenshots/parse_by_sol.png)
-* _json.loads_ structure allows to download remote JSON file and convert it into an object of class "Dictionary" of Python language.
-* The following items only show how to access and retrieve certain JSON file keys, such as camera name, photo link, or Martian day
-* _webbrowser.open_ allows you to open the browser window in real time and view the photo by referenced arguments.
-
-***
 ## System requirements
 |                              **System Requirements**                            |
 | ----------------------------------------------------------------------------- |
