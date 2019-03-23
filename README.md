@@ -21,7 +21,7 @@ It makes you able to visit a website, where you can:
 
 ## Getting Started
 
-You can manually download this project and run __flask_app.py__ to locally open a website or run __make_map.py__ to see how I created a folium-based HTML map. You can also clone this repo by typing into your terminal: `git clone <repo's_link>`
+You can manually download this project and run __flask_app.py__ to locally open a website or run __make_map.py__ to see how I created a folium-based HTML map. You can also clone this repo by typing into your terminal: `git clone <repo's_link>` \
 See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites (chapter is in progress)
@@ -39,13 +39,13 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 ```
-Give the example
+Examples will be here soon!
 ```
 
 And repeat
 
 ```
-until finished
+Examples will be here soon!
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
@@ -59,7 +59,7 @@ Explain how to run the automated tests for this system
 Explain what these tests test and why
 
 ```
-Give an example
+Examples will be here soon!
 ```
 
 ### And coding style tests (chapter is in progress)
@@ -67,7 +67,7 @@ Give an example
 Explain what these tests test and why
 
 ```
-Give an example
+Examples will be here soon!
 ```
 
 ## Deployment (chapter is in progress)
@@ -76,31 +76,32 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With (chapter is in progress)
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Feature1](link) - description
+* [Feature2](link) - description
+* [Feature3](link) - description
 
 ## Contributing (chapter is in progress)
 
-Please read [CONTRIBUTING.md](link) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](link) for details on our code of conduct, and the process for submitting pull requests to me.
 
 ## Versioning (chapter is in progress)
 
-
+Version 0.1 (Alpha) - 21.02.2019
+Version 0.2 (Alpha) - 23.03.2019
 
 ## Authors
 
-* **Mykhailo Pazyniuk** - *Initial work* - [damoklov](https://github.com/damoklov/)
+* **Mykhailo Pazyniuk** - [damoklov](https://github.com/damoklov/)
 
 See also the list of [contributors](link) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments 
 
-* I used this README.md template made by [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+* I used this wonderful README.md template made by [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
 * Inspiration
 * etc
 
