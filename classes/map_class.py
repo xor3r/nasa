@@ -1,5 +1,5 @@
 import folium
-from parse_location import get_locations
+from modules.parse_location import get_locations
 
 
 class Map:

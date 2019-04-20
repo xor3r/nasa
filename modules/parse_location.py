@@ -18,7 +18,7 @@ def get_locations():
 
 
 def write_to_file(locations, attr='w'):
-    f = open('data/locations.csv', attr, encoding='utf-8', errors='ignore')
+    f = open('../data/locations.csv', attr, encoding='utf-8', errors='ignore')
     for pair in locations:
         f.write(str(pair[0]) + ',' + str(pair[1]) + '\n')
     f.close()
