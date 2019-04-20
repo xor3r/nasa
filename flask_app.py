@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+import make_map
 
 
 app = Flask(__name__)
@@ -13,6 +14,7 @@ def index():
 def map():
     if request.method == 'POST':
         if request.form.get('submit_button'):
+            #make_map.main()
             return render_template('mars.html')
         else:
             pass
@@ -35,4 +37,4 @@ def statistics():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
