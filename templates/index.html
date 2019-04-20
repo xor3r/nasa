@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/style.css">
     <meta charset="UTF-8">
     <title>Rover</title>
 </head>
 <body>
-    <div id="centerLayer">
+    <div class="centerLayer">
         <form action="/map" method="post">
-            <input type="submit" name="submit_button" value="Display Map">
+            <input type="submit" name="submit_button" value="Display map">
         </form>
         <form action="/photos" method="post">
-            <input type="submit" name="submit_button2" value="Watch Photos">
+            <input type="submit" name="submit_button2" value="Watch photos">
         </form>
         <form action="/statistics" method="post">
-            <input type="submit" name="submit_button3" value="">
+            <input type="submit" name="submit_button3" value="See statistics">
         </form>
     </div>
 </body>
