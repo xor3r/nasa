@@ -1,6 +1,9 @@
+import urllib.request
+import json
 from modules.parse_location import get_locations, write_to_file
 from classes.map_class import Map
 from classes.adt_class import Multiset, DynamicArray
+from classes.link_class import Array
 
 
 def readfile():
@@ -9,7 +12,19 @@ def readfile():
     return data
 
 
-def build_map(data):
+def find_images():
+    URL = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=mast&api_key=DEMO_KEY'
+    link_storage = Array(20)
+    response = urllib.request.urlopen(URL)
+    data = json.loads(response.read())
+
+    for i in range(20):
+        link_storage[i] = data['photos'][i]['img_src']
+
+    return link_storage
+
+
+def build_map(data, links):
     m = Map(data)
 
     line_locations = Multiset()
@@ -26,8 +41,13 @@ def build_map(data):
                         stored_locations[len(stored_locations)-1],
                         'blue', 'red', 8)
 
-    m.add_popup_image("https://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02375/opgs/edr/ncam/NRB_608330915EDR_M0751386NCAM00591M_.JPG",
-                      width=255, height=300, location_tuple=stored_locations[21757])
+    loc = 100
+    for link in links:
+        m.add_popup_image(link,
+                          width=200,
+                          height=200,
+                          location_tuple=stored_locations[loc])
+        loc += 1000
 
     m.save_map('../templates/mars.html')
 
@@ -36,14 +56,15 @@ def build_map(data):
 
 def main():
     generator = readfile()
-    m = build_map(generator)
+    links = find_images()
+    m = build_map(generator, links)
     need = m.need_to_update_map('../data/locations.csv')
     if need:
         print('Updating the map..')
         locations = get_locations()
         write_to_file(locations)
         DATA = readfile()
-        build_map(DATA)
+        build_map(DATA, links)
     else:
         print('No update needed')
     return None
