@@ -106,7 +106,6 @@ class Multiset:
         while i != index:
             self._head = self._head.next
 
-
     def __iter__(self):
         """Iterator"""
         return self
