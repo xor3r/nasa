@@ -1,44 +1,53 @@
-import folium
+from parse_location import get_locations, write_to_file
+from map_class import Map
+from adt_class import Multiset, DynamicArray
 
 
 def readfile():
-	f = open('data/locations.csv', 'r', errors='ignore', encoding='utf-8')
-	data = (tuple(line.strip().split(',')) for line in f)
-	return data
+    f = open('data/locations.csv', 'r', errors='ignore', encoding='utf-8')
+    data = (tuple(line.strip().split(',')) for line in f)
+    return data
 
 
 def build_map(data):
+    m = Map(data)
 
-	ATTR ='<a href="https://github.com/openplanetary/opm/wiki/OPM-Basemaps" target="blank">OpenPlanetaryMap</a>'
-	TILE = 'https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-1/all/{z}/{x}/{y}.png'
+    line_locations = Multiset()
+    stored_locations = DynamicArray()
+    for pair in data:
+        line_locations.add(pair)
+        stored_locations.append(pair)
 
-	m = folium.Map(attr=f'NASA/MOLA |{ATTR}',
-				   location=(-4.58946695213448, 137.441633498919),
-				   min_zoom=1,
-				   max_zoom=20,
-				   tiles=TILE,
-				   zoom_start=12,
-				   prefer_canvas=False)
+    m.add_lines(line_locations)
 
-	locations = [tuple(map(float, pair)) for pair in data]
-	folium.PolyLine(locations).add_to(m)
+    m.add_circle_marker(stored_locations[0], stored_locations[0],
+                        'blue', 'red', 8)
+    m.add_circle_marker(stored_locations[len(stored_locations)-1],
+                        stored_locations[len(stored_locations)-1],
+                        'blue', 'red', 8)
 
-	m.add_child(folium.CircleMarker(
-		location=locations[0],
-		popup=str(locations[0]),
-		fill_color='blue',
-		color='red',
-		radius=8))
-	m.add_child(folium.CircleMarker(
-		location=locations[-1],
-		popup=str(locations[-1]),
-		fill_color='blue',
-		color='red',
-		radius=8))
+    m.add_popup_image("https://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02375/opgs/edr/ncam/NRB_608330915EDR_M0751386NCAM00591M_.JPG",
+                      width=255, height=300, location_tuple=stored_locations[21757])
 
-	m.save('templates/mars.html')
+    m.save_map('templates/mars.html')
+
+    return m
+
+
+def main():
+    generator = readfile()
+    m = build_map(generator)
+    need = m.need_to_update_map('data/locations.csv')
+    if need:
+        print('Updating the map..')
+        locations = get_locations()
+        write_to_file(locations)
+        DATA = readfile()
+        build_map(DATA)
+    else:
+        print('No update needed')
+    return None
 
 
 if __name__ == '__main__':
-	DATA = readfile()
-	build_map(DATA)
+    main()
