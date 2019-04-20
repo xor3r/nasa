@@ -1,6 +1,6 @@
 from parse_location import get_locations, write_to_file
-from map_class import Map
-from adt_class import Multiset, DynamicArray
+from classes.map_class import Map
+from classes.adt_class import Multiset, DynamicArray
 
 
 def readfile():
