@@ -32,7 +32,7 @@ class Map:
 
     def add_popup_image(self, img_link, width, height, location_tuple):
         iframe = folium.IFrame(
-            '<img src={}>'.format(img_link),
+            '<img src={} style="width:100%; height:100%;">'.format(img_link),
             width=width,
             height=height)
         popup = folium.Popup(iframe, max_width=2500)
