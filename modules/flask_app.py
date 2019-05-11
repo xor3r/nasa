@@ -33,7 +33,7 @@ def photos():
 def statistics():
     if request.method == 'POST':
         if request.form.get('submit_button3'):
-            return redirect('https://docs.google.com/uc?export=download&id=1lYncv13zTjbwoqEn3kcynF74p0Txp0vt')
+            return redirect('https://docs.google.com/uc?export=download&id=14zD9ysWs7XuAw2GdFGbg_HJJwT5J2NDU')
 
 
 @app.route("/search", methods=["POST"])
