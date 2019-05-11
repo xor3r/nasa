@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
+from images import search_images
+
 
 app = Flask(__name__, template_folder="../templates", static_folder='../static')
 
@@ -24,14 +26,27 @@ def map():
 def photos():
     if request.method == 'POST':
         if request.form.get('submit_button2'):
-            return 'Photos will appear here soon!'
+            return render_template('search.html')
 
 
-@app.route("/statistics", methods=['GET', 'POST'])
+@app.route("/app", methods=['GET', 'POST'])
 def statistics():
     if request.method == 'POST':
         if request.form.get('submit_button3'):
-            return 'Statistics'
+            return redirect('https://docs.google.com/uc?export=download&id=1lYncv13zTjbwoqEn3kcynF74p0Txp0vt')
+
+
+@app.route("/search", methods=["POST"])
+def search():
+    date = request.form.get("date")
+    camera = request.form.get("camera")
+    if not date:
+        return 'Failed'
+    else:
+        images = search_images(date, camera)
+        if images:
+            return render_template('gallery.html', image_names=images)
+        return 'No images found :('
 
 
 if __name__ == '__main__':
