@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+    <meta charset="UTF-8">
+    <title>Searching Page</title>
+</head>
+<body>
+    <div class="centerLayer">
+        <h1>Search cameras</h1>
+        <form action="/search" method="post">
+            <input name="date" placeholder="Date (YYYY-MM-DD)" type="text"/>
+            <select name="camera">
+                <option disabled selected value="">Camera</option>
+                <option value="FHAZ">FHAZ</option>
+                <option value="RHAZ">RHAZ</option>
+                <option value="MAST">MAST</option>
+                <option value="NAVCAM">NAVCAM</option>
+                <option value="CHEMCAM">CHEMCAM</option>
+                <option value="MARDI">MARDI</option>
+                <option value="MAHLI">MAHLi</option>
+            </select>
+            <input type="submit" value="search"/>
+        </form>
+    </div>
+</body>
+</html>
