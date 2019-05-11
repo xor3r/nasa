@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Images</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+          crossorigin="anonymous">
+
 </head>
 <body>
-$END$
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">Gallery</h1>
+        </div>
+        <iframe src="https://giphy.com/embed/GiWEowj3nQv9C" width="200" height="100" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <h3>This process may take a while, please be patient.</h3>
+        <hr>
+        {% for image_name in image_names %}
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <img class="img-responsive" src={{image_name}}>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous">
+</script>
+
 </body>
 </html>
