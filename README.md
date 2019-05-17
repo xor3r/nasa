@@ -48,7 +48,7 @@ pip3 install -r requirements.txt
 
 ### Documentation
 
-Documentation for this application can be found on https://nasa.readthedocs.io/en/latest/.
+Documentation for this application can be found on https://nasa.readthedocs.io/en/latest/ or locally in _docs/pdf_ directory.
 
 ### Installing
 
