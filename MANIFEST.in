@@ -2,7 +2,17 @@ graft static
 graft templates
 global-exclude *.pyc
 global-exclude __pycache__
+global-exclude .gitattributes
+global-exclude .gitignore
 include README.md
+include README.txt
 recursive-include classes *.py
 recursive-include data *.csv
 recursive-include modules *.py
+prune .git
+prune .idea
+prune diagrams
+prune examples
+prune media
+prune screenshots
+prune tests
