@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from images import search_images
+import make_map
 
 
 app = Flask(__name__, template_folder="../templates", static_folder='../static')
