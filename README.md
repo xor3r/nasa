@@ -29,79 +29,117 @@ It makes you able to visit a website, where you can:
 
 ## Getting Started
 
-You can manually download this project and run __flask_app.py__ to locally open a website or run __make_map.py__ to see how I created a folium-based HTML map. You can also clone this repo by typing into your terminal: `git clone <repo's_link>` \
+You can manually download this project and run __flask_app.py__ to locally open a website or run __make_map.py__ to see how I created a folium-based HTML map. You can also clone this repo by typing into your terminal: `git clone <repo's_link>` 
 See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites (chapter is in progress)
+### Prerequisites
 
-You do not need any special tools for running my project except for Python 3 and certain packages
+You need __Folium__ and __Flask__ packages to locally run my web application.\
+All required packages can be found in _requirements.txt_ file in root folder.
 
+Windows:
 ```
-Examples will be here soon!
+pip install -r requirements.txt
 ```
-
-### Installing (chapter is in progress)
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+UNIX:
 ```
-Examples will be here soon!
+pip3 install -r requirements.txt
 ```
 
-And repeat
+### Documentation
 
+Documentation for this application can be found on https://nasa.readthedocs.io/en/latest/.
+
+### Installing
+
+You can configure virtual environment to use my application, by running following commands:\
+(_env_ will be the name of new VE)
+
+Windows:
 ```
-Examples will be here soon!
+py -m venv env
+.\env\Scripts\activate
+```
+UNIX:
+```
+python3 -m venv env
+source env/bin/activate
+```
+And then install the distro and :
+
+Windows:
+```
+cd nasa
+python setup.py install
+```
+UNIX:
+```
+cd nasa
+python3 setup.py install
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Now that the website is up and runnig on your localhost, you can open it in a webbrowser on 127.0.0.1:5000 address (typically).
 
-## Running the tests (chapter is in progress)
+## Running the tests
 
-Explain how to run the automated tests for this system
+In order to run unittests for my application, you need to execute following commands:
 
-### Break down into end to end tests (chapter is in progress)
-
-Explain what these tests test and why
-
+Windows:
 ```
-Examples will be here soon!
-```
-
-### And coding style tests (chapter is in progress)
-
-Explain what these tests test and why
-
-```
-Examples will be here soon!
+cd nasa/tests
+python test_adt_class.py
+python test_link_class.py
+python test_map_class.py
 ```
 
-## Deployment (chapter is in progress)
+UNIX:
+```
+cd nasa/tests
+python3 test_adt_class.py
+python3 test_link_class.py
+python3 test_map_class.py
+```
+### Break down into end to end tests
 
-Add additional notes about how to deploy this on a live system
+_test_adt_class.py_ tests all abstract data types used in the project.\
+_test_link_class.py_ tests class for storing links.\
+_test_map_class.py_ tests custom Map class.
 
-## Built With (chapter is in progress)
+### And coding style tests
 
-* [Feature1](link) - description
-* [Feature2](link) - description
-* [Feature3](link) - description
+Three test modules are built to show that the classes and scripts are running in all cases.
 
-## Contributing (chapter is in progress)
+## Deployment
 
-Please read [CONTRIBUTING.md](link) for details on our code of conduct, and the process for submitting pull requests to me.
+To deploy the project simply run _flash_app.py_ when in venv:
 
-## Versioning (chapter is in progress)
+Windows:
+```
+cd nasa/modules
+python flask_app.py
+```
+UNIX:
+```
+cd nasa/modules
+python3 flask_app.py
+```
 
-Version 0.1 (Alpha) - 21.02.2019
-Version 0.2 (Alpha) - 23.03.2019
+## Built With
+
+* [Flask](http://flask.pocoo.org/) - Web Framework
+* [Folium](https://github.com/python-visualization/folium) - Map Builder
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to me.
+
+## Versioning
+
+Version 1.0.0 (Stable) - 18.05.2019
 
 ## Authors
 
 * **Mykhailo Pazyniuk** - [damoklov](https://github.com/damoklov/)
-
-See also the list of [contributors](link) who participated in this project.
 
 ## License
 
@@ -110,8 +148,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments 
 
 * I used this wonderful README.md template made by [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* Inspiration
-* etc
+* I was inspired by public data that NASA reveals via the API, and so decided to make my project based on it.
 
 ## Brief explanation of API functions
 ### Main features
