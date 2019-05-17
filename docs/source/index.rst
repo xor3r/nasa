@@ -8,7 +8,8 @@ Welcome to nasa's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   
+   
 
 
 
