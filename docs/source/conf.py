@@ -20,6 +20,7 @@
 project = 'nasa'
 copyright = '2019, damoklov'
 author = 'damoklov'
+master_doc = 'index'
 
 # The full version, including alpha/beta/rc tags
 release = '1.0.0'
