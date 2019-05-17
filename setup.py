@@ -19,7 +19,7 @@ setup(
         "License :: OSI Approved :: MIT",
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries :: Python Modules",
-        "Topic :: Web Applications :: NASA API",
+        "Topic :: Environment :: Web Environment",
         ],
     include_package_data=True,
     zip_safe=False,
