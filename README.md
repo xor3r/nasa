@@ -109,7 +109,7 @@ _test_map_class.py_ tests custom Map class.
 
 Three test modules are built to show that the classes and scripts are running in all cases.
 
-## Deployment
+## Deployment (Desktop)
 
 To deploy the project simply run _flash_app.py_ when in venv:
 
@@ -123,6 +123,15 @@ UNIX:
 cd nasa/modules
 python3 flask_app.py
 ```
+
+## Deployment (Android Phone)
+
+To download the APK file, head to http://curiosity.pythonanywhere.com/ and press the __Download Android App__ button.\
+The download will start shortly, and your phone might ask you to give certain permissions as the app is not from Play Market.\
+Do so, and then install the APK file.\
+After installation, launch __Curiosity__ app on your phone.\
+It is recommended to use it with Google Cardboard, but it is enough to hold your phone and rotate it in different directions.\
+To move from one location to another, simply 'look up' (head your phone to the top) and press the red arrow.
 
 ## Built With
 
