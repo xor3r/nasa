@@ -37,7 +37,11 @@ extensions = ['sphinx.ext.autodoc',
 	'sphinx.ext.intersphinx', 
 	'sphinx.ext.todo', 
 	'sphinx.ext.mathjax', 
-	'sphinx.ext.napoleon']
+	'sphinx.ext.napoleon',
+	'rst2pdf.pdfbuilder']
+
+# Template for PDF document generation
+pdf_documents = [('index', u'documentation', u'NASA Project Documentation', u'damoklov'),]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
