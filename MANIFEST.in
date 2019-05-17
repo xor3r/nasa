@@ -1,0 +1,8 @@
+include flaskr/schema.sql
+graft flaskr/static
+graft flaskr/templates
+global-exclude *.pyc
+include README.md
+recursive-include classes *.py
+recursive-include data *.csv
+recursive-include modules *.py
