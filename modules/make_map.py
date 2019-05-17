@@ -7,12 +7,22 @@ from classes.link_class import Array
 
 
 def readfile():
+    """
+    Reads data from locations.csv file and returns it as a generator object.
+
+    :return: generator object
+    """
     f = open('../data/locations.csv', 'r', errors='ignore', encoding='utf-8')
     data = (tuple(line.strip().split(',')) for line in f)
     return data
 
 
 def find_images():
+    """
+    Finds 20 images for displaying on map.
+
+    :return: Array-class object
+    """
     URL = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=mast&api_key=DEMO_KEY'
     link_storage = Array(20)
     response = urllib.request.urlopen(URL)
@@ -25,6 +35,13 @@ def find_images():
 
 
 def build_map(data, links):
+    """
+    Builds map with folium and custom Map class.
+
+    :param data: generator object
+    :param links: Array-class object
+    :return: Map-class object
+    """
     m = Map(data)
 
     line_locations = Multiset()
@@ -55,6 +72,12 @@ def build_map(data, links):
 
 
 def main():
+    """
+    Main function which launches map creation and checks whether to update data
+    file locations.csv.
+
+    :return: None
+    """
     generator = readfile()
     links = find_images()
     m = build_map(generator, links)

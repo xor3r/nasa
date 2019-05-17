@@ -3,6 +3,11 @@ import urllib.request
 
 
 def get_locations():
+    """
+    Retrieves information about location of a mars rover from online XML file.
+
+    :return: list
+    """
     locs = 'http://mars.jpl.nasa.gov/msl-raw-images/locations.xml'
     data = urllib.request.urlopen(locs).read()
     xmldoc = minidom.parseString(data)
@@ -18,6 +23,13 @@ def get_locations():
 
 
 def write_to_file(locations, attr='w'):
+    """
+    Writes longitude and latitude into CSV file.
+
+    :param locations: list
+    :param attr: str
+    :return: None
+    """
     f = open('../data/locations.csv', attr, encoding='utf-8', errors='ignore')
     for pair in locations:
         f.write(str(pair[0]) + ',' + str(pair[1]) + '\n')

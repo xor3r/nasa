@@ -3,6 +3,13 @@ from json import load
 
 
 def search_images(date, camera):
+    """
+    Applies given date and camera type to the URL and retrieves data from it.
+
+    :param date: str
+    :param camera: str
+    :return: set/None
+    """
     if date:
         date = '&earth_date=' + date
     if camera:
