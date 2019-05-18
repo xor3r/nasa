@@ -11,6 +11,10 @@ http://curiosity.pythonanywhere.com/
 
 ![GIF](https://media.giphy.com/media/xT0xezQXGJl8nRthny/source.gif)
 
+# Watch video tutorial (in Ukrainian)  :tv:
+
+[![Watch the video](https://img.youtube.com/vi/wz4bsiv6e3I/maxresdefault.jpg)](https://youtu.be/wz4bsiv6e3I)
+
 # Brief description (in Ukrainian)  :sparkler:
 
 __Призначення програми:__ Полегшений доступ користувачів до даних щодо пересування марсоходу Curiosity планетою, фотографії за датою та камерою, додаток для смартфону із можливістю перегляду панорамних 360 фотографій.\
