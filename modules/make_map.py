@@ -1,11 +1,12 @@
+import sys
+sys.path.append("..")
 import urllib.request
 import json
 from modules.parse_location import get_locations, write_to_file
 from classes.map_class import Map
 from classes.adt_class import Multiset, DynamicArray
 from classes.link_class import Array
-import sys
-sys.path.append("..")
+
 
 
 def readfile():
