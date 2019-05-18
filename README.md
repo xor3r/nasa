@@ -36,20 +36,6 @@ It makes you able to visit a website, where you can:
 You can manually download this project and run __flask_app.py__ to locally open a website or run __make_map.py__ to see how I created a folium-based HTML map. You can also clone this repo by typing into your terminal: `git clone <repo's_link>` 
 See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites  :cd:
-
-You need __Folium__ and __Flask__ packages to locally run my web application.\
-All required packages can be found in _requirements.txt_ file in root folder.
-
-Windows:
-```
-pip install -r requirements.txt
-```
-UNIX:
-```
-sudo pip3 install -r requirements.txt
-```
-
 ### Documentation  :notebook_with_decorative_cover:
 
 Documentation for this application can be found on https://nasa.readthedocs.io/en/latest/ or locally in _docs/pdf_ directory.
@@ -83,6 +69,20 @@ sudo python3 setup.py install
 ```
 
 Now that the website is up and runnig on your localhost, you can open it in a webbrowser on 127.0.0.1:5000 address (typically).
+
+### Prerequisites  :cd:
+
+You need __Folium__ and __Flask__ packages to locally run my web application.\
+All required packages can be found in _requirements.txt_ file in root folder.
+
+Windows:
+```
+pip install -r requirements.txt
+```
+UNIX:
+```
+sudo pip install -r requirements.txt
+```
 
 ## Running the tests  :bookmark:
 
