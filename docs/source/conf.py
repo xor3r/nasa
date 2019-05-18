@@ -38,7 +38,7 @@ extensions = ['sphinx.ext.autodoc',
 	'sphinx.ext.todo', 
 	'sphinx.ext.mathjax', 
 	'sphinx.ext.napoleon',
-	'rst2pdf.pdfbuilder']
+	]
 
 # Template for PDF document generation
 pdf_documents = [('index', u'documentation', u'NASA Project Documentation', u'damoklov'),]
