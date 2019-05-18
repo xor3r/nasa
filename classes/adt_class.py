@@ -2,7 +2,7 @@ import ctypes
 
 
 class Node:
-	"""Class for representing node"""
+    """Class for representing node"""
     def __init__(self, item, next=None):
         """Constructor for class Node"""
         self.item = item
@@ -14,7 +14,7 @@ class Node:
 
 
 class Multiset:
-	"""CLass for representing multiset"""
+    """CLass for representing multiset"""
     def __init__(self):
         """Constructor for class Multiset"""
         self._head = None
@@ -52,7 +52,7 @@ class Multiset:
                 previous.next = current.next
 
     def __len__(self):
-		"""Rerutns length of multiset"""
+        """Rerutns length of multiset"""
         length = 0
         head = self._head
         while head is not None:
@@ -61,7 +61,7 @@ class Multiset:
         return length
 
     def remove_all(self):
-		"""Removes all inside multiset"""
+        """Removes all inside multiset"""
         removed = list()
         current = self._head
         removed.append(self._head.item)
@@ -72,7 +72,7 @@ class Multiset:
         return tuple(removed)
 
     def __str__(self):
-		"""String representation of multiset"""
+        """String representation of multiset"""
         line = '{'
         current = self._head
         while current is not None:
