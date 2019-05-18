@@ -43,7 +43,7 @@ pip install -r requirements.txt
 ```
 UNIX:
 ```
-pip3 install -r requirements.txt
+sudo pip3 install -r requirements.txt
 ```
 
 ### Documentation
@@ -75,7 +75,7 @@ python setup.py install
 UNIX:
 ```
 cd nasa
-python3 setup.py install
+sudo python3 setup.py install
 ```
 
 Now that the website is up and runnig on your localhost, you can open it in a webbrowser on 127.0.0.1:5000 address (typically).
