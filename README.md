@@ -1,4 +1,4 @@
-﻿# nasa
+﻿# nasa  :space_invader:
 Project for analyzing data from NASA's API (mainly rovers on Mars) and creating a VR experience using it.
 http://curiosity.pythonanywhere.com/
 
@@ -11,7 +11,7 @@ http://curiosity.pythonanywhere.com/
 
 ![GIF](https://media.giphy.com/media/xT0xezQXGJl8nRthny/source.gif)
 
-# Brief description (in Ukrainian)
+# Brief description (in Ukrainian)  :sparkler:
 
 __Призначення програми:__ Полегшений доступ користувачів до даних щодо пересування марсоходу Curiosity планетою, фотографії за датою та камерою, додаток для смартфону із можливістю перегляду панорамних 360 фотографій.\
 __Вхідні та вихідні дані програми__: здебільшого - посилання на фото, які отримуються із JSON-файлів АРІ NASA, а також координати марсохода.\
@@ -19,7 +19,7 @@ __Структура програми__: основні модулі знахо�
 __Коротка інструкція із користування програмою__: для запуску програми необхідно клонувати репозиторій та запустити файл flask_app.py. Буде розгорнуто локальну копію сторінки. Для отримання додатку для смартфона необхідно перейти за посиланням у відповідному розіділі сайту та завантажити АРК файл з подальшим його встановленням на своєму телефоні.\
 __Опис тестових прикладів__: усі тести знаходяться у теці tests та, скоріше, демонструють працездатність структур даних, які використовуються. Для тестування сайту на бекенд-частини проекту необхідно запустити модуль flask_app.py у режимі Debug.
 
-# Virtual Journey on Mars
+# Virtual Journey on Mars  :v:
 
 This project is in development as a part of my coursework from Programming course.
 It makes you able to visit a website, where you can:
@@ -27,12 +27,12 @@ It makes you able to visit a website, where you can:
 2. Have a look on a map of Curiosity rover's movement since the very beginning of its life on Mars.
 3. Look on some photos of Mars based on your choice.
 
-## Getting Started
+## Getting Started  :computer:
 
 You can manually download this project and run __flask_app.py__ to locally open a website or run __make_map.py__ to see how I created a folium-based HTML map. You can also clone this repo by typing into your terminal: `git clone <repo's_link>` 
 See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+### Prerequisites  :cd:
 
 You need __Folium__ and __Flask__ packages to locally run my web application.\
 All required packages can be found in _requirements.txt_ file in root folder.
@@ -46,11 +46,11 @@ UNIX:
 sudo pip3 install -r requirements.txt
 ```
 
-### Documentation
+### Documentation  :notebook_with_decorative_cover:
 
 Documentation for this application can be found on https://nasa.readthedocs.io/en/latest/ or locally in _docs/pdf_ directory.
 
-### Installing
+### Installing  :pushpin:
 
 You can configure virtual environment to use my application, by running following commands:\
 (_env_ will be the name of new VE)
@@ -80,7 +80,7 @@ sudo python3 setup.py install
 
 Now that the website is up and runnig on your localhost, you can open it in a webbrowser on 127.0.0.1:5000 address (typically).
 
-## Running the tests
+## Running the tests  :bookmark:
 
 In order to run unittests for my application, you need to execute following commands:
 
@@ -99,17 +99,17 @@ python3 test_adt_class.py
 python3 test_link_class.py
 python3 test_map_class.py
 ```
-### Break down into end to end tests
+### Break down into end to end tests  :newspaper:
 
 _test_adt_class.py_ tests all abstract data types used in the project.\
 _test_link_class.py_ tests class for storing links.\
 _test_map_class.py_ tests custom Map class.
 
-### And coding style tests
+### And coding style tests  :books:
 
 Three test modules are built to show that the classes and scripts are running in all cases.
 
-## Deployment (Desktop)
+## Deployment (Desktop)  :floppy_disk:
 
 To deploy the project simply run _flash_app.py_ when in venv:
 
@@ -124,7 +124,7 @@ cd nasa/modules
 python3 flask_app.py
 ```
 
-## Deployment (Android Phone)
+## Deployment (Android Phone)  :iphone:
 
 To download the APK file, head to http://curiosity.pythonanywhere.com/ and press the __Download Android App__ button.\
 The download will start shortly, and your phone might ask you to give certain permissions as the app is not from Play Market.\
@@ -133,38 +133,38 @@ After installation, launch __Curiosity__ app on your phone.\
 It is recommended to use it with Google Cardboard, but it is enough to hold your phone and rotate it in different directions.\
 To move from one location to another, simply 'look up' (head your phone to the top) and press the red arrow.
 
-## Built With
+## Built With  :thumbsup:
 
 * [Flask](http://flask.pocoo.org/) - Web Framework
 * [Folium](https://github.com/python-visualization/folium) - Map Builder
 
-## Contributing
+## Contributing  :muscle:
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to me.
 
-## Versioning
+## Versioning  :star2:
 
 Version 1.0.0 (Stable) - 18.05.2019
 
-## Authors
+## Authors  :alien:
 
 * **Mykhailo Pazyniuk** - [damoklov](https://github.com/damoklov/)
 
-## License
+## License  :scroll:
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## Acknowledgments 
+## Acknowledgments  :clipboard:
 
 * I used this wonderful README.md template made by [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
 * I was inspired by public data that NASA reveals via the API, and so decided to make my project based on it.
 
-## Brief explanation of API functions
-### Main features
+## Brief explanation of API functions  :point_down:
+### Main features  :registered:
 https://api.nasa.gov/index.html
 ***
 
-#### **Mars Rover Photos**
+#### **Mars Rover Photos**  :camera:
 
 This, provided by NASA, API helps to gather information from **'Curiosity', 'Opportunity' and 'Spirit'** rovers, what makes it more easy for scientists and developers to access it.\
 This API is currently monitored by _Chris Cerami_.\
@@ -177,8 +177,8 @@ Each camera has a unique feature and perspective.\
 Example of entry on 06/06/2015 (https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=DEMO_KEY)
 ***
 
-## Coursework description problem
-### Idea
+## Coursework description problem  :globe_with_meridians:
+### Idea  :star:
 Space is the endless, separate world for exploration, where each one of us can find something for him or her.\
 My research topic is based on the info, providede by the National Aeronautics and Space Administration (NASA):
 * Photos from the rovers
@@ -193,7 +193,7 @@ NASA also provides an opportunity for anyone wishing to use their APIs - to cont
 </p>
 
 ***
-### Why Mars?
+### Why Mars?  :milky_way:
 Nasa engineers have a lot of projects, but the study of the surface of Mars is currently one of the most promising in the short term, since very little time left before the flight of the first people to the Martian spaces!\
 NASA provides free access to the data from the 'Curiosity' roaming coordinates during one or another period of its stay on a distant planet.
 > The 'Curiosity' was launched from Cape Canaveral on November 26, 2011, at 10:02 aboard the Martian Scientific Laboratory (MSL) spacecraft and landed at Aeolis Palus in the Gale Mars Crater August 6, 2012, at 5:17. The  Bradbury Landing site is located less than 2.4 km (1.5 miles) from the Marshall landing point after a 563 million-kilometers-long (350 million-mile) trip.
@@ -232,8 +232,8 @@ There are several cameras installed on the 'Curiosity' rover, photos from 7 of t
 
 ***
 
-### Summary
-#### Concept
+### Summary  :ledger:
+#### Concept  :bar_chart:
 The concept of the program is that it, with the resources provided by NASA, will do the following:
 1. Access the necessary photos from the rooftop cameras
 2. Processing information from database files with coordinates of the rover during the entire stay on Mars
@@ -244,7 +244,7 @@ I also plan to gradually expand the functionality, which will differentiate my p
 
 ***
 
-## System requirements
+## System requirements  :books:
 |                              **System Requirements**                            |
 | ----------------------------------------------------------------------------- |
 | **Project Sponsor:** Michael Pazyniuk |
