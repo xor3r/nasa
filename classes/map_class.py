@@ -1,5 +1,7 @@
 import folium
 from modules.parse_location import get_locations
+import sys
+sys.path.append("..")
 
 
 class Map:
