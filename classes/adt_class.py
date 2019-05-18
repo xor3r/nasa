@@ -2,40 +2,25 @@ import ctypes
 
 
 class Node:
+	"""Class for representing node"""
     def __init__(self, item, next=None):
-        """
-        Produces a newly constructed empty node.
-        __init__: Any -> Node
-        Fields: item stores any value
-            next points to the next node in the list
-        """
+        """Constructor for class Node"""
         self.item = item
         self.next = next
 
     def __str__(self):
-        """
-        Prints the value stored in self.
-        __str__: Node -> Str
-        """
+        """Prints the value stored in self"""
         return str(self.item)
 
 
 class Multiset:
+	"""CLass for representing multiset"""
     def __init__(self):
-        """
-        Produces a newly constructed empty Multiset.
-        __init__: -> Multiset
-        Field: _head points to the first node in the linked list
-        """
+        """Constructor for class Multiset"""
         self._head = None
 
     def __contains__(self, value):
-        """
-        Checks existence of value in the Multiset.
-        __contains__: Multiset Any -> Bool
-        :param value: the value to be check.
-        :return: True if Multiset is in the Multiset and False otherwise.
-        """
+        """Checks existence of value in the Multiset"""
         current = self._head
         while current is not None:
             if current.item == value:
@@ -45,11 +30,7 @@ class Multiset:
         return False
 
     def add(self, value):
-        """
-        Adds the value to multiset.
-
-        :param value: the value to be added.
-        """
+        """Adds the value to multiset"""
         if self._head is None:
             self._head = Node(value)
         else:
@@ -58,10 +39,7 @@ class Multiset:
             self._head.next = rest
 
     def delete(self, value):
-        """
-
-        :param value: value first occurrence of which should be deleted.
-        """
+        """Deletes certain value"""
         current = self._head
         previous = None
         while current is not None and current.item != value:
@@ -74,6 +52,7 @@ class Multiset:
                 previous.next = current.next
 
     def __len__(self):
+		"""Rerutns length of multiset"""
         length = 0
         head = self._head
         while head is not None:
@@ -82,6 +61,7 @@ class Multiset:
         return length
 
     def remove_all(self):
+		"""Removes all inside multiset"""
         removed = list()
         current = self._head
         removed.append(self._head.item)
@@ -92,6 +72,7 @@ class Multiset:
         return tuple(removed)
 
     def __str__(self):
+		"""String representation of multiset"""
         line = '{'
         current = self._head
         while current is not None:
@@ -129,7 +110,7 @@ class DynamicArray:
         self._A = self._make_array(self._capacity)  # low-level array
 
     def __len__(self):
-        """Return number of elements stored in the array."""
+        """Return number of elements stored in the array"""
         return self._n
 
     def __setitem__(self, k, obj):
@@ -139,20 +120,20 @@ class DynamicArray:
         self._A[k] = obj
 
     def __getitem__(self, k):
-        """Return element at index k."""
+        """Return element at index k"""
         if not 0 <= k < self._n:
             raise IndexError('invalid index')
         return self._A[k]  # retrieve from array
 
     def append(self, obj):
-        """Add object to end of the array."""
+        """Add object to end of the array"""
         if self._n == self._capacity:  # not enough room
             self._resize(2 * self._capacity)  # so double capacity
         self._A[self._n] = tuple(map(float, obj))
         self._n += 1
 
     def _resize(self, c):  # nonpublic utitity
-        """Resize internal array to capacity c."""
+        """Resize internal array to capacity c"""
         B = self._make_array(c)  # new (bigger) array
         for k in range(self._n):  # for each existing value
             B[k] = self._A[k]
@@ -161,11 +142,11 @@ class DynamicArray:
 
     @staticmethod
     def _make_array(c):  # nonpublic utitity
-        """Return new array with capacity c."""
+        """Return new array with capacity c"""
         return (c * ctypes.py_object)()  # see ctypes documentation
 
     def insert(self, k, value):
-        """Insert value at index k, shifting subsequent values rightward."""
+        """Insert value at index k, shifting subsequent values rightward"""
         # (for simplicity, we assume 0 <= k <= n in this verion)
         if self._n == self._capacity:  # not enough room
             self._resize(2 * self._capacity)  # so double capacity
@@ -175,7 +156,7 @@ class DynamicArray:
         self._n += 1
 
     def remove(self, value):
-        """Remove first occurrence of value( or  raise ValueError)."""
+        """Remove first occurrence of value(or  raise ValueError)"""
         # note: we do not consider shrinking the dynamic array in this version
         for k in range(self._n):
             if self._A[k] == value:  # found a match!
